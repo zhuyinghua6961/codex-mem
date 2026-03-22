@@ -60,7 +60,11 @@ Pull latest updates:
 curl -s -X POST "http://localhost:37777/api/branch/update"
 ```
 
-Branch switch and update may restart the worker. Say that before using them.
+Branch switch and update are disruptive. Say this before using them:
+- the worker may restart automatically
+- local changes may be discarded
+- branch switch may remove untracked files
+- dependency reinstall may run as part of the operation
 
 ## Administrative State
 
@@ -78,6 +82,7 @@ Use these for a quick operator snapshot.
 - Change the smallest possible settings payload.
 - Treat branch switching as disruptive.
 - Do not pretend MCP toggle makes Codex gain Claude-native plugin behavior; it only changes claude-mem runtime state.
+- Do not present branch switch or update as harmless status toggles.
 
 ## Common Mistakes
 

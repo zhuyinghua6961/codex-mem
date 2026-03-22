@@ -36,6 +36,7 @@ npm run queue:clear
 ```
 
 Use these when the user wants the upstream script workflow for queue inspection or recovery rather than the HTTP API.
+`npm run queue:clear` is destructive and should only be used with explicit user intent.
 
 ## Export Memories
 
@@ -85,3 +86,4 @@ Use these when the user is integrating claude-mem with Cursor or removing that i
 - using HTTP queue operations when the user actually wants the upstream script workflow
 - restarting the worker when a read-only status check would answer the question
 - forgetting that export/import script paths assume a repo checkout with dependencies available
+- treating `npm run queue:clear` as a harmless cleanup command
